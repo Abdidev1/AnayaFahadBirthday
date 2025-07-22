@@ -1,0 +1,295 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Quicksand:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* Soft light blue to light green */
+    color: #4a148c; /* Deep purple text, still works well */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+    font-family: 'Comfortaa', cursive; /* Playful, rounded font for main heading */
+    color: #6200ea; /* Vibrant purple */
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #673ab7; /* Medium purple */
+    margin-bottom: 30px;
+}
+
+.message-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.5em;
+    color: #3f51b5; /* Royal blue */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 2px dashed #9fa8da; /* Dashed light purple border */
+    border-radius: 10px;
+    background-color: #e8eaf6; /* Very light purple background */
+}
+
+.special-message {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #e3f2fd; /* Lightest blue */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.special-message h2 {
+    font-family: 'Comfortaa', cursive;
+    color: #6200ea;
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.surprise-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.from-text, .your-name-here {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #3f51b5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Evolving Wishes Section Styling */
+.wishes-section {
+    margin-top: 50px;
+    border-top: 1px dashed #9fa8da;
+    padding-top: 40px;
+}
+
+.wishes-section h2 {
+    font-family: 'Comfortaa', cursive;
+    color: #673ab7;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.wish-display {
+    min-height: 80px; /* Provide space for text to appear */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #880e4f; /* A new accent color for wishes */
+    background-color: #ffebee; /* Light background for the wish */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* For text transitions */
+    overflow: hidden;
+    animation: backgroundPulse 4s infinite alternate; /* Subtle background animation */
+}
+
+@keyframes backgroundPulse {
+    from { background-color: #ffebee; }
+    to { background-color: #f8bbd0; } /* Gently shifts color */
+}
+
+.wish-display span {
+    position: absolute; /* Allows text to fade in/out smoothly */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.wish-display span.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px dashed #9fa8da;
+    color: #7986cb;
+    font-size: 0.9em;
+}
+
+/* Background Animated Elements - Same as before */
+.background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.element {
+    position: absolute;
+    opacity: 0.7;
+    animation: float 10s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Star styling */
+.star {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid #ffd700; /* Gold */
+    position: relative;
+    transform: rotate(35deg); /* Base rotation */
+}
+.star::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #ffd700; /* Gold */
+    top: 10px;
+    left: -20px;
+    transform: rotate(-70deg);
+}
+.star1 { top: 15%; left: 10%; animation-delay: 0s; transform: scale(0.9) rotate(35deg); }
+.star2 { top: 40%; right: 15%; animation-delay: 2.5s; transform: scale(1.1) rotate(45deg); }
+/* Add more stars with different positions and delays */
+
+/* Flower styling (simpler, more stylized) */
+.flower {
+    width: 40px;
+    height: 40px;
+    background-color: #a7ffeb; /* Light mint green */
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0deg);
+}
+.flower::before, .flower::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: #80cbc4; /* Slightly darker mint */
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
+.flower::before { top: -10px; left: 5px; }
+.flower::after { top: 5px; left: -10px; }
+
+
+.flower1 { top: 25%; left: 5%; animation-delay: 1s; transform: scale(0.8); }
+.flower2 { top: 50%; right: 8%; animation-delay: 3s; transform: scale(1.0); }
+
+/* Bubble styling */
+.bubble {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(173, 216, 230, 0.5); /* Light blue, semi-transparent */
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.7);
+    animation: floatBubble 8s ease-in-out infinite; /* Different animation for bubbles */
+}
+.bubble1 { bottom: 10%; left: 20%; animation-delay: 0.5s; }
+
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-25px) rotate(5deg); opacity: 1; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+}
+
+@keyframes floatBubble {
+    0% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(-30px); opacity: 0.8; }
+    100% { transform: translateY(0); opacity: 0.5; }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    .countdown {
+        font-size: 1.8em;
+    }
+    .special-message h2 {
+        font-size: 2em;
+    }
+    .message-section p, .wishes-section h2 { /* Updated here */
+        font-size: 1em;
+    }
+    .container {
+        padding: 20px;
+    }
+    .wish-display {
+        font-size: 1.2em;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+    .countdown {
+        font-size: 1.5em;
+    }
+}
